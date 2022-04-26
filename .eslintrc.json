@@ -2,6 +2,10 @@
   "env": {
     "browser": true
   },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2022
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -21,7 +25,6 @@
       }
     }
   ],
-  "parser": "@babel/eslint-parser",
   "rules": {
     "no-console": "off",
     "react/no-find-dom-node": "off",
@@ -30,7 +33,7 @@
   },
   "settings": {
     "react": {
-      "version": "detect"
+      "version": "16"
     }
   }
 }

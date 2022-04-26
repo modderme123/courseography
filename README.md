@@ -22,7 +22,7 @@ First install the following:
 
 1. [Stack](https://docs.haskellstack.org/en/stable/README/)
 2. [Node.js](https://nodejs.org/en/download/)
-3. Yarn, by opening a terminal and running: `npm install -g yarn`
+3. PNPM, by opening a terminal and running: `npm install -g pnpm`
 4. [ImageMagick](http://www.imagemagick.org/script/download.php)
 5. [GraphViz](https://graphviz.org/download/)
 6. [LaTeX](https://www.latex-project.org/get/)
@@ -42,7 +42,7 @@ _Run these two steps manually._
 Run the following commands (the parts after `#` are just comments):
 
 ```console
-$ yarn install  # Install all Javascript dependencies
+$ pnpm install  # Install all Javascript dependencies
 $ stack setup   # Install the required GHC compiler
 $ stack build   # Compile Courseography and all Haskell dependencies (this will take a while)
 ```

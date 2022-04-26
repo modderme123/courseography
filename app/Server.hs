@@ -22,7 +22,7 @@ import System.Log.Logger (Priority (INFO), rootLoggerName, setLevel, updateGloba
 import System.Process (CreateProcess, createProcess, shell)
 
 webpackProcess :: CreateProcess
-webpackProcess = shell "yarn run watch"
+webpackProcess = shell "pnpm run watch"
 
 runServer :: IO ()
 runServer = do

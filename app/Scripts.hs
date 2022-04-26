@@ -9,10 +9,10 @@ import qualified Text.Blaze.Html5.Attributes as A
 import Util.Blaze
 
 graphScripts :: H.Html
-graphScripts = H.script ! A.src "/static/js/graph/app.js" $ ""
+graphScripts = H.script ! A.src "/static/js/graph/main.js" $ ""
 
 timetableScripts :: H.Html
-timetableScripts = H.script ! A.src "/static/js/grid/app.js" $ ""
+timetableScripts = H.script ! A.src "/static/js/grid/grid.js" $ ""
 
 drawScripts :: H.Html
 drawScripts = do
@@ -21,17 +21,17 @@ drawScripts = do
          "/static/js/draw/path.js",
          "/static/js/draw/setup.js",
          "/static/js/vendor/jscolor.min.js"]
-    H.script ! A.src "/static/js/draw/app.js" $ ""
+    H.script ! A.src "/static/js/draw/main.js" $ ""
 
 postScripts :: H.Html
 postScripts = do
     mapM_ toScript []
-    H.script ! A.src "/static/js/post/app.js" $ ""
+    H.script ! A.src "/static/js/post/post.js" $ ""
 
 searchScripts :: H.Html
 searchScripts = do
-    H.script ! A.src "/static/js/search/app.js" $ ""
+    H.script ! A.src "/static/js/search/search.js" $ ""
 
 generateScripts :: H.Html
 generateScripts = do
-    H.script ! A.src "/static/js/generate/app.js" $ ""
+    H.script ! A.src "/static/js/generate/generate.js" $ ""

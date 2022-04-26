@@ -23,7 +23,7 @@ jobs:
             curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             sudo apt-get install -y nodejs
 
-            npm install -g yarn
+            npm install -g pnpm
       - run:
           name: Resolve/Update Dependencies
           command: |
@@ -31,13 +31,13 @@ jobs:
             rm -fr $(stack path --dist-dir) $(stack path --local-install-root)
             cp app/DevelopmentConfig.hs app/Config.hs
             stack --no-terminal build --fast -j1 --ghc-options -Werror
-            yarn install
+            pnpm install
 
       - run:
           name: Run tests
           command: |
             stack --no-terminal test
-            yarn test
+            pnpm test
 
       - save_cache:
           name: Cache Dependencies (Haskell)
@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Lint JS
           command: |
-            yarn run eslint
+            pnpm run eslint
 
       - run:
           name: Generate documentation

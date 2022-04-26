@@ -6,7 +6,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "start": "stack exec courseography",
-    "watch": "webpack --watch",
+    "watch": "node build.js",
     "test": "jest",
     "prettier": "prettier --write .",
     "eslint": "eslint --fix-dry-run --ignore-path .prettierignore js"
@@ -26,65 +26,60 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/cypress/",
-      "<rootDir>/js/components/graph/__tests__/TestGraph.js",
-      "<rootDir>/js/components/graph/__tests__/TestSidebar.js",
-      "<rootDir>/js/components/graph/__tests__/TestContainer.js",
-      "<rootDir>/js/components/graph/__tests__/TestFocusBar.js",
-      "<rootDir>/js/components/graph/__tests__/cleanup-after-each.js"
+      "<rootDir>/js/graph/__tests__/TestGraph.js",
+      "<rootDir>/js/graph/__tests__/TestSidebar.js",
+      "<rootDir>/js/graph/__tests__/TestContainer.js",
+      "<rootDir>/js/graph/__tests__/TestFocusBar.js",
+      "<rootDir>/js/graph/__tests__/cleanup-after-each.js"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/js/components/graph/__tests__/cleanup-after-each.js"
-    ]
+      "<rootDir>/js/graph/__tests__/cleanup-after-each.js"
+    ],
+    "moduleNameMapper": {
+      "^(react|react-dom)$": "preact/compat",
+      "^react-dom/test-utils$": "preact/compat/test-utils"
+    },
+    "transform": {
+      "^.+\\.jsx?$": [
+        "esbuild-jest",
+        {
+          "loaders": {
+            ".js": "jsx",
+            ".test.js": "jsx"
+          }
+        }
+      ]
+    }
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
-    "core-js": "^3.11.0",
-    "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
-    "leaflet": "^1.5.1",
-    "lodash": "^4.17.19",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-leaflet": "^2.3.0",
-    "react-modal": "^3.5.1",
-    "regenerator-runtime": "^0.13.7",
-    "stringstream": "^0.0.6",
-    "webpack": "^5.36.0"
+    "leaflet": "^1.8.0",
+    "lodash": "^4.17.21",
+    "preact": "^10.7.1",
+    "react-leaflet": "^2.8.0",
+    "react-modal": "^3.14.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/eslint-parser": "^7.15.0",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.13.15",
-    "@babel/preset-react": "^7.13.13",
-    "@testing-library/react": "^12.0.0",
-    "babel-jest": "26.6.3",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.4",
-    "cypress": "3.4.1",
-    "enzyme": "3.8.0",
-    "enzyme-adapter-react-16": "1.8.0",
-    "enzyme-to-json": "3.3.5",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "fetch-mock": "^7.3.1",
+    "@testing-library/react": "^12.1.5",
+    "cypress": "9.6.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-preact-pure": "4.0.1",
+    "enzyme-to-json": "3.6.2",
+    "esbuild": "0.14.38",
+    "esbuild-jest": "0.5.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "fetch-mock": "^9.11.0",
     "jest": "26.6.3",
-    "mini-css-extract-plugin": "^1.5.1",
-    "node-fetch": "^2.6.1",
-    "precise-commits": "1.0.2",
-    "prettier": "^2.3.2",
-    "prop-types": "15.6.2",
-    "sass": "^1.32.11",
-    "sass-loader": "^11.0.1",
-    "style-loader": "^2.0.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-sass-guidelines": "^8.0.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.1.11"
+    "node-fetch": "^2.6.7",
+    "prettier": "^2.6.2",
+    "prop-types": "15.8.1",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier": "^9.0.3"
   }
 }

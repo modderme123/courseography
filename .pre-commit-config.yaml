@@ -43,13 +43,11 @@ exclude: |
       db/.*|
       doc/.*|
       graphs/.*|
-      js/components/draw/.*|
+      js/draw/.*|
       public/.*|
       vendor/.*|
       .*\.min\..*|
       \.stack-work/.*|
-      \.yarn/.*|
-      \.pnp\.js|
       .*/__snapshots__/.*|
   )$
 

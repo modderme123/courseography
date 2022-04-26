@@ -10,9 +10,6 @@ cabal.sandbox.config
 # chosen configuration file
 /app/Config.hs
 
-# generated build files
-/app/dist/
-
 # generated stack files
 .stack-work/
 
@@ -36,22 +33,7 @@ cabal.sandbox.config
 # Node (Javascript) modules
 /node_modules
 
-# Yarn files
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
-# TODO: eventually remove all public/js files from tracking
-/public/js/search
-/public/js/grid/app.js
-/public/js/post/app.js
-/public/js/generate/app.js
-/public/js/graph/app.js
-/public/js/draw/app.js
+/public/js/
 
 # coverage directory used by tools like istanbul and jest --coverage
 coverage

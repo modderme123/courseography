@@ -4,7 +4,7 @@ doc/
 graphs/
 
 # TODO: review this file
-js/components/draw/
+js/draw/
 
 public/
 
@@ -12,5 +12,4 @@ vendor/
 *.min.*
 
 .stack-work/
-.yarn/
-.pnp.js/
+

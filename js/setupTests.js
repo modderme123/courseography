@@ -1,10 +1,10 @@
 import { configure } from "enzyme"
-import Adapter from "enzyme-adapter-react-16"
+import Adapter from "enzyme-adapter-preact-pure"
 configure({ adapter: new Adapter() }) // enzyme
-import testData from "./components/graph/__mocks__/defaultTestData"
-import testContainerData from "./components/graph/__mocks__/testContainerData"
-import aaa100CourseInfo from "./components/graph/__mocks__/aaa100-course-info"
-import statisticsTestData from "./components/graph/__mocks__/statisticsTestData"
+import testData from "./graph/__mocks__/defaultTestData"
+import testContainerData from "./graph/__mocks__/testContainerData"
+import aaa100CourseInfo from "./graph/__mocks__/aaa100-course-info"
+import statisticsTestData from "./graph/__mocks__/statisticsTestData"
 import fetchMock from "fetch-mock"
 
 fetchMock.get("http://localhost/get-json-data?graphName=Computer+Science", testData)
